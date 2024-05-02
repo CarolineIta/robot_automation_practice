@@ -5,11 +5,11 @@ Library    FakerLibrary        locale=pt_BR
 
 *** Keywords ***
 Abrir site automationpractice
-    New Browser           headless=False               browser=chromium
+    New Browser           browser=chromium
     New Page              ${BASE_URL}
 
 Abrir pagina login
-    New Browser           headless=False               browser=chromium        
+    New Browser           browser=chromium        
     New Page              ${LOGIN_URL}
 Fechar navegador
     Close Page            ALL
