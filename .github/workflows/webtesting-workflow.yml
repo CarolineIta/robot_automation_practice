@@ -43,7 +43,7 @@ jobs:
 
       - name: Download Tests Results
         if: always()
-        uses: actions/upload-artifact@v1
+        uses: actions/download-artifact@v1
         with: 
           name: result-chromium
 
