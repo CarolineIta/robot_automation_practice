@@ -29,7 +29,6 @@ jobs:
       
       - name: Run RobotFramework WEB Tests
         run: |
-            robot -d ./result -v HEADLESS:true \ 
-            -v BROWSER:chromium test 
+            robot -d ./result -v HEADLESS:true -v BROWSER:chromium test 
 
       
