@@ -12,7 +12,7 @@ Abrir pagina login
     New Browser           headless=False               browser=chromium        
     New Page              ${LOGIN_URL}
 Fechar navegador
-    Close Page
+    Close Page            ALL
 
 Gerar email randomico
     ${faker_email}=       FakerLibrary.Email
