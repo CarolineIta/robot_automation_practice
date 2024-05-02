@@ -5,6 +5,7 @@ on: [push]
 jobs:
   web-tests:
     runs-on: ubuntu-20.04
+    permissions:  write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -40,4 +41,16 @@ jobs:
           if-no-files-found: ignore
           retention-days: 2 
 
-      
+      - name: Download Tests Results
+        if: always()
+        uses: actions/upload-artifact@v1
+        with: 
+          name: result-chromium
+
+      - name: Send Report
+        if: always()
+        uses: joonvena/robotframework-reporter-action@v2.1
+        with: 
+          name: result-chromium
+          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+          show_passed_tests: true
