@@ -31,4 +31,13 @@ jobs:
         run: |
             robot -d ./result -v HEADLESS:true -v BROWSER:chromium test 
 
+      - name: Upload Tests Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with: 
+          name: result-chromium
+          path: ./result
+          if-no-files-found: ignore
+          retention-days: 2 
+
       
